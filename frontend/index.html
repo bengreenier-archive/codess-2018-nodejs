@@ -6,12 +6,17 @@
     <div id="target">
     </div>
     <script id="template" type="text/ractive">
+      <div class="creation">
+        <input type="text" placeholder="username"/>
+        <input type="text" placeholder="Share something!"/>
+        <button on-click="['post']">Post</button>
+      </div>
       {{#messages}}
       <div>
         <h3>{{contents}}</h3>
         <div>
           <p class="username">{{username}}</p>
-          <p class="id">{{id}}</p>
+          <p class="id">{{id}} <a href="#" on-click="['delete', id]">(delete)</a></p>
         </div>
       </div>
       {{/messages}}
