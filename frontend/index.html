@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Codess 2018</title>
+  </head>
+  <body>
+    <div id="target">
+    </div>
+    <script id="template" type="text/ractive">
+      {{#messages}}
+      <div>
+        <h3>{{contents}}</h3>
+        <div>
+          <p class="username">{{username}}</p>
+          <p class="id">{{id}}</p>
+        </div>
+      </div>
+      {{/messages}}
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.2/superagent.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ractive/1.0.0-build-99/ractive.min.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
