@@ -1,0 +1,141 @@
+swagger: '2.0'
+info:
+  description: "Completed example of the codess 2018 workshop I ran ❤️💙💚 
+    \n\n
+    This project is designed to be an introduction into nodejs service development! This repository specifically houses an example implementation of a service for sharing brief messages posted by a specific user, and viewable by many.
+    \n\n
+    __This is the documentation for the v1 API__"
+  version: 1.0.0
+  title: codess-2018-nodejs
+  license:
+    name: MIT
+    url: 'https://opensource.org/licenses/MIT'
+schemes:
+  - http
+paths:
+  /messages:
+    get:
+      summary: Retrieves all messages
+      description: >-
+        Retrieves all messages that have been published to the service.
+      operationId: getAllMessages
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Message'
+        '500':
+          description: error occured
+    post:
+      summary: Creates a message
+      description: >-
+        Creates a new message in the service.
+      operationId: createMessage
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: The message contents to create
+        schema:
+          $ref: '#/definitions/MessageContents'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Message'
+        '500':
+          description: error occured
+  /messages/{messageId}:
+    get:
+      summary: Retrieves a particular message
+      description: >-
+        Retrieves a particular message that has been published to the service.
+      operationId: getMessage
+      parameters:
+        - in: path
+          name: messageId
+          description: The id of the message
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful response
+        '500':
+          description: error occured
+    put:
+      summary: Updates a particular message
+      description: >-
+        Updates a particular message that has been published to the service.
+      operationId: updateMessage
+      parameters:
+        - in: path
+          name: messageId
+          description: The id of the message
+          required: true
+          type: string
+        - in: body
+          name: body
+          required: true
+          description: The message contents to create
+          schema:
+            $ref: '#/definitions/MessageContents'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful response
+        '500':
+          description: error occured
+    delete:
+      summary: Removes a particular message
+      description: >-
+        Removes a particular message that has been published to the service.
+      operationId: removeMessage
+      parameters:
+        - in: path
+          name: messageId
+          description: The id of the message
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful response
+        '500':
+          description: error occured
+definitions:
+  Message:
+    type: object
+    properties:
+      id:
+        type: string
+        example: '1f90386c-2c73-4069-a136-1ef1bcb1a211'
+      username:
+        type: string
+        example: 'username'
+      contents:
+        type: string
+        example: 'hello world!'
+  MessageContents:
+    type: object
+    properties:
+      username:
+        type: string
+        example: 'username'
+      contents:
+        type: string
+        example: 'hello world!'
+externalDocs:
+  description: Find out more on Github
+  url: 'https://github.com/bengreenier/codess-2018-nodejs'
