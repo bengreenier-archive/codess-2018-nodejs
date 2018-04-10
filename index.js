@@ -1,5 +1,7 @@
 const serveStatic = require('serve-static')
 const backendAllocator = require('./backend')
+
+// create an instance of the backend service
 const app = backendAllocator()
 
 // serve up the frontend too!

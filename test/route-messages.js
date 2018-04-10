@@ -3,6 +3,8 @@ const Message = require('../backend/models/message')
 const backendAllocator = require('../backend')
 /* eslint-env node, mocha */
 
+// these tests validate that the API works under basic conditions
+// these are by no means exhaustive testing, but they are a useful gut check
 describe('/messages', () => {
   beforeEach(() => {
     Message.Clear()

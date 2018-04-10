@@ -8,6 +8,8 @@ module.exports = () => {
   const app = express()
 
   // configure our routes
+  // in this case, we use the imported messages router and mount it at /messages
+  // all the child routes that are defined on the router will now be put under /messages
   app.use('/messages', messages)
 
   // return the app instance
