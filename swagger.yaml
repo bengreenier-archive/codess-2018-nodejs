@@ -70,6 +70,8 @@ paths:
       responses:
         '200':
           description: successful response
+          schema:
+              $ref: '#/definitions/Message'
         '500':
           description: error occured
     put:
@@ -94,6 +96,8 @@ paths:
       responses:
         '200':
           description: successful response
+          schema:
+              $ref: '#/definitions/Message'
         '500':
           description: error occured
     delete:
