@@ -22,8 +22,8 @@ boundDomElement.on('delete', (context, messageId) => {
 
 boundDomElement.on('post', (context) => {
   // use dom navigation (this is semi-brittle) to find the values
-  const usernameNode = context.node.previousElementSibling.previousElementSibling
-  const contentsNode = context.node.previousElementSibling
+  const usernameNode = document.querySelector('#username-text')
+  const contentsNode = document.querySelector('#contents-text')
   const username = usernameNode.value
   const contents = contentsNode.value
 

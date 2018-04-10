@@ -1,22 +1,41 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Codess 2018</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.0.0/materia/bootstrap.min.css" rel="stylesheet" integrity="sha384-kpxyUW5uLgBOlhLqm8Hga/aWgf7FgZWLhphVqsMgaW0s+G6KF1RZpUb6ygQL3WUE" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
   <body>
-    <div id="target">
+    <div class="container">
+      <div id="target">
+      </div>
     </div>
     <script id="template" type="text/ractive">
-      <div class="creation">
-        <input type="text" placeholder="username"/>
-        <input type="text" placeholder="Share something!"/>
-        <button on-click="['post']">Post</button>
+      <div id="creation" class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input id="username-text" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">
+            <button type="button" class="btn btn-primary" on-click="['post']">Post</button>
+          </span>
+        </div>
+      </div>
+      <div id="creation" class="input-group mb-3">
+        <textarea id="contents-text" class="form-control" aria-label="Message contents" placeholder="Share something!"></textarea>
       </div>
       {{#messages}}
-      <div>
-        <h3>{{contents}}</h3>
-        <div>
-          <p class="username">{{username}}</p>
-          <p class="id">{{id}} <a href="#" on-click="['delete', id]">(delete)</a></p>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="card-text"><i class="fa fa-quote-left"></i> {{contents}} <i class="fa fa-quote-right"></i></h3>
+          <p href="#">by <b>{{username}}</b></p>
+          <a href="/messages/{{id}}" class="card-link">{{id}}</a>
+          <a href="#" on-click="['delete', id]" class="card-link">Delete</a>
         </div>
       </div>
       {{/messages}}
