@@ -1,4 +1,4 @@
-# codess-2018-nodejs
+# codess-2018-nodejs [![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
 Completed example of the codess 2018 workshop I ran. ❤️💙💚
 
