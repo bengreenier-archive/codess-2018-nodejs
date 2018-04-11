@@ -12,6 +12,7 @@ Before you start, please make sure you've installed these things:
 
 * [NodeJS](https://nodejs.org/en/)
 * [VS Code](https://code.visualstudio.com/) (or equivalent)
+* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (optional, for deployment)
 
 ## Usage
 
@@ -26,10 +27,18 @@ To build and run this project, please follow these steps:
 
 Please feel free to inspect the code (it is well commented) and [open issues](https://github.com/bengreenier/codess-2018-nodejs/issues) with any questions you might have!
 
+## Deployment
+
+To deploy this project to Azure you can click the giant blue button above! However, if you wish to deploy a similar project (or a fork of this project) you may prefer to follow along with [this deployment tutorial](https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-zip). 👏🏽
+
 ## API
 
 [Here are the API docs](https://rebilly.github.io/ReDoc/?url=https://raw.githubusercontent.com/bengreenier/codess-2018-nodejs/master/swagger.yaml)! :sparkles:
 
+
+## Slides
+
+[Here are the slides](http://slides.com/bengreenier/codess-2018-nodejs) that I presented! :rocket:
 
 ## License
 
